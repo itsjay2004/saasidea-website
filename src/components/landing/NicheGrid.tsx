@@ -1,0 +1,3 @@
+export function NicheGrid({ industries }: { industries: { industry: string; count: number }[] }) {
+  return <section className="mx-auto max-w-6xl px-6 py-16"><p className="text-sm text-accent">Browse by Industry</p><h2 className="mt-2 text-3xl font-bold">15 Industries. 75 Niches. 375 Sub-niches.</h2><div className="mt-6 grid gap-4 md:grid-cols-4">{industries.map((i)=><article key={i.industry} className="rounded-xl border border-border bg-surface2 p-4"><h3 className="font-semibold">{i.industry}</h3><p className="mt-1 text-sm text-text-muted">{i.count} ideas</p><a className="mt-3 inline-block text-sm text-accent" href={`/ideas?industry=${encodeURIComponent(i.industry)}`}>Explore →</a></article>)}</div></section>;
+}
